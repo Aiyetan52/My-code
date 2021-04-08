@@ -1,0 +1,60 @@
+######## Project 1####################
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(MASS)
+library(lmtest)
+library(stats)
+library(dplyr)
+#load data
+PJ=read_excel("Econometrics Proposal 2.xlsx")
+Inflow=PJ$Inflow
+Outflow=PJ$Outflow
+inflow=log(Inflow)
+#generate changes in PM 2.5
+PJ=PJ %>% rename (PM=`Air Pollution`) 
+PJ1=PJ %>%group_by(Counties) %>% mutate(Y = c(0, diff(PM)))%>%ungroup()
+# Estimate the Regression 
+Reg2=glm(log(Inflow)~Y, data=PJ1)
+summary(Reg2)
+#Diagnostic Test
+shapiro.test(Reg2$res)
+
+PJ1=PJ %>% mutate(Y=coalesce(diff(PM),0)
+ggplot(PJ, aes(x=PM, y=Inflow))+geom_point()+geom_smooth(method="lm", se=TRUE)
+ggplot(PJ, aes(x=PM, y=Outflow))+geom_point()+geom_smooth(method="lm", se=TRUE)
+ggplot(PJ, aes(y=Inflow,x=Counties))+geom_boxplot()+coord_flip()
+ggplot(PJ, aes(y=Outflow,x=Counties))+geom_boxplot()+coord_flip()
+ggplot(PJ, aes(y=PM,x=Counties))+geom_boxplot()+coord_flip()
+summary(PJ)
+Reg=glm(log(Inflow)~PM, data=PJ)
+summary(Reg)
+Y=diff(PJ$PM)
+Inflo1=PJ$Inflow
+Reg2=glm(log(Inflo1)~Y)
+summary(Reg2)
+Reg1=glm(log(Outflow)~PM, data=PJ)
+summary(Reg1)
+stargazer(Reg,Reg1, title=" Regression of the effect of Air Pollution on Inflow and Outflow Migration  ",
+                            type = "html",se = NULL,p = NULL, 
+                            intercept.top = FALSE, align=TRUE)
+qqnorm(Reg$res)
+qqline(Reg$res)
+hist(Reg$res)
+library(MASS)
+boxcox(log(Outflow)~PM, data=PJ,lambda = seq(-0.2, 2.0, length = 100))
+summary(Reg)
+Reg1=lm(log(Outflow)~PM, data=PJ)
+summary(Reg1)
+qqnorm(Reg$res)
+qqline(Reg$res)
+hist(Reg$res)
+shapiro.test(Reg$res)
+shapiro.test(Reg1$res)
+bptest(Reg2)
+bptest(Reg1)
+dwtest(Reg)
+dwtest(Reg2)
+boxcox(Outflow~PM, data=PJ,lambda = seq(-0.2, 2.0, length = 100))
+summary(Reg)
+plot(PM, Inflow)                 
