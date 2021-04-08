@@ -1,0 +1,149 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, September 24, 2019 12:30:33}
+%TCIDATA{LastRevised=Tuesday, September 24, 2019 13:19:25}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+
+\begin{enumerate}
+\item Find demand for good $y$ from the consumer's EMP
+
+\begin{itemize}
+\item To find demand for good $y$, we plug the demand for good $x$ into her
+utility target $u=2x^{1/3}+y$
+
+\[
+u=2\left( \underset{x_{E}}{\underbrace{\left( \frac{2p_{y}}{3p_{x}}\right)
+^{3/2}}}\right) ^{1/3}+y
+\]
+
+Solving for $y$, we obtain the consumer's demand for good $y$
+
+\[
+y^{E}(p_{x},p_{y},u)=u-2\left( \frac{2p_{y}}{3p_{x}}\right) ^{1/2}
+\]
+\end{itemize}
+
+\item Calculate the CV for a price increase from $p_{x}=\$5$ to $%
+p_{x}^{\prime }=\$10$, where $u=30$ and $p_{y}=\$1.$
+
+\begin{itemize}
+\item The CV becomes the integral of the demand function for good $x$
+between prices $p_{x}=\$5$ and $p_{x}^{\prime }=\$10$, that is 
+
+\[
+CV=\int_{p_{x}}^{p_{x}^{\prime
+}}x^{E}(p_{x},p_{y},u)dp_{x}=\int_{5}^{10}\left( \frac{2}{3p_{x}}\right)
+^{3/2}dp_{x}
+\]
+
+\[
+=0.54\int_{5}^{10}\left( \frac{1}{p_{x}}\right)
+^{3/2}dp_{x}=0.54\int_{5}^{10}\left( p_{x}\right) ^{-3/2}dp_{x}
+\]
+\end{itemize}
+
+The integral of $(p_{x})^{a}$ is $\frac{p_{x}^{a+1}}{a+1}$(power rule of
+integration), implying that the integral of $(p_{x})^{-3/2}$ is $\frac{%
+(p_{x})^{-3/2+1}}{\frac{-3}{2}+1}=\frac{(p_{x})^{-3/2+1}}{\frac{-1}{2}}%
+=-2(p_{x})^{-1/2}$. Therefore, the above integral becomes
+
+\[
+CV=0.54\times |-2(p_{x})^{-1/2}|_{5}^{10}
+\]
+
+\[
+CV=0.54\left[ -2(10^{-1/2}-5^{-1/2})\right] 
+\]
+
+\[
+CV=-1.09\times \left( \frac{1}{\sqrt{10}}-\frac{1}{\sqrt{5}}\right) 
+\]
+
+\[
+CV=0.14
+\]
+
+This means that we need to give the consumer \$0.14 to make her as well off
+as she is before the price increase.
+
+\item Calculate the CV of the above price change in good $x$, but using the
+demand function of good $y$ to see how the consumer's welfare in her
+purchases \ of good $y$ is affected by a more expensive good $x$
+
+\begin{itemize}
+\item The CV becomes the intergral of the demand function for good $y$
+between prices $p_{x}=\$5$ and $p_{x}^{\prime }=\$10$, that is 
+
+\[
+CV=\int_{p_{x}}^{p_{x}^{\prime
+}}y^{E}(p_{x},p_{y},u)dp_{x}=\int_{5}^{10}30-2\left( \frac{2}{3p_{x}}\right)
+^{1/2}dp_{x}
+\]
+\end{itemize}
+
+\[
+\int_{5}^{10}30dp_{x}-1.63\int_{5}^{10}\left( p_{x}\right) ^{-1/2}dp_{x}
+\]
+
+The integral of $(p_{x})^{a}$ is $\frac{p_{x}^{a+1}}{a+1}$(power rule of
+integration), implying that the integral of $(p_{x})^{-1/2}$ is $\frac{%
+(p_{x})^{-1/2+1}}{\frac{-1}{2}+1}=\frac{(p_{x})^{1/2}}{\frac{1}{2}}%
+=2(p_{x})^{-1/2}$. Therefore, the above integral becomes
+
+\[
+CV=|30p_{x}|_{5}^{10}-1.63\times |2(p_{x})^{1/2}|_{5}^{10}
+\]
+
+\[
+CV=30\times |p_{x}|_{5}^{10}-3.26\times |(p_{x})^{1/2}|_{5}^{10}
+\]
+
+\[
+CV=30(10-5)-3.26[10^{1/2}-5^{1/2}]
+\]
+
+\[
+CV=146.98
+\]
+
+This means that we need to give the consumer \$146.98 to make her as well
+off as she is before the price increase.
+\end{enumerate}
+
+\end{document}
